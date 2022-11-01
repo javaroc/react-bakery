@@ -1,3 +1,44 @@
+
+.menu-list {
+  border: 2px solid green;
+}
+
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid purple;
+  
+}
+
+.item-desc {
+  border: 2px solid cyan;
+}
+
+.price {
+  border: 2px solid red;
+}
+
+.checkout {
+  border: 2px solid purple;
+}
+
+.receipt {
+  border: 2px solid green;
+}
+
+.receipt-items {
+  border: 2px solid red;
+}
+
+.about-us{
+  border: 2px solid green;
+}
+
+.quotes {
+  border: 2px solid orange;
+}
+
 .App {
   text-align: center;
 }

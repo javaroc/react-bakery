@@ -1,24 +1,32 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import logo from './logo.svg';
+import AboutUs from "./paths/about-us.js";
+import Checkout from "./paths/checkout.js";
+import Menu from "./paths/menu.js";
+import Navbar from "./paths/navbar.js";
 import './App.css';
+
+window.$BABA = "BABA";
+window.$CRISP = "CRISP";
+window.$PRICES = {CRISP: 8.99, BABA: 45};
+window.$cart = {BABA : 0, CRISP: 0};
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path="/" element={<Navbar/>}>
+          <Route index element={<AboutUs/>}/>
+          <Route path="menu" element={<Menu/>}/>
+          <Route path='checkout' element={<Checkout/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
